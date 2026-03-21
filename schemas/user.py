@@ -3,6 +3,8 @@ from datetime import datetime
 
 from pydantic import BaseModel, EmailStr, field_validator
 
+from enums.role import RoleEnum
+
 
 class UserCreate(BaseModel):
     email: EmailStr
@@ -21,7 +23,7 @@ class UserResponse(BaseModel):
     id: uuid.UUID
     email: str
     username: str
-    role: str
+    role: RoleEnum
     created_at: datetime
 
     model_config = {"from_attributes": True}
