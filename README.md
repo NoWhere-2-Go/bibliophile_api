@@ -47,6 +47,8 @@ Open `test_main.http` in your IDE and run:
 - `GET /`
 - `GET /hello/User`
 - `GET /health/db`
+- `POST /user`
+- `POST auth/session`
 
 Expected DB success response:
 
@@ -55,4 +57,6 @@ Expected DB success response:
 ```
 
 If DB is unreachable, `/health/db` returns HTTP 503 with error detail.
+
+`POST auth/session` validates email/password and rotates previous active tokens by expiring them immediately.
 

@@ -15,3 +15,24 @@ Accept: application/json
 
 ###
 
+POST http://127.0.0.1:8000/user
+Content-Type: application/json
+
+{
+  "email": "reader@example.com",
+  "username": "reader1",
+  "password": "Password1"
+}
+
+###
+
+POST http://127.0.0.1:8000/session
+Content-Type: application/json
+
+{
+  "email": "reader@example.com",
+  "password": "Password1"
+}
+
+###
+
