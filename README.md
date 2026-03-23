@@ -26,14 +26,12 @@ If your local server uses different credentials/database, edit `.env`.
 uvicorn app.main:app --reload
 ```
 
-You can still run `uvicorn main:app --reload` during transition because `main.py` re-exports `app.main:app`.
-
 ## 4) Project structure
 
 ```text
 app/
   api/
-	routes/
+    routes/
   core/
   db/
   enums/
