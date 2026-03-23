@@ -1,6 +1,3 @@
-import enum
+from app.enums.role import RoleEnum
 
-
-class RoleEnum(enum.Enum):
-    USER = 1
-    ADMIN = 2
+__all__ = ["RoleEnum"]

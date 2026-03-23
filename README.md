@@ -23,10 +23,27 @@ If your local server uses different credentials/database, edit `.env`.
 ## 3) Run the API
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
-## 4) Verify endpoints
+You can still run `uvicorn main:app --reload` during transition because `main.py` re-exports `app.main:app`.
+
+## 4) Project structure
+
+```text
+app/
+  api/
+	routes/
+  core/
+  db/
+  enums/
+  models/
+  schemas/
+  services/
+  main.py
+```
+
+## 5) Verify endpoints
 
 Open `test_main.http` in your IDE and run:
 - `GET /`
