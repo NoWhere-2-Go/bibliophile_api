@@ -2,6 +2,8 @@ from fastapi import FastAPI
 
 import app.models  # noqa: F401 - imports all model classes for SQLAlchemy metadata registration
 from app.api.router import api_router
+from app.middleware.request_context import RequestContextMiddleware
+from app.middleware.request_logging import RequestLoggingMiddleware
 
 
 def create_app() -> FastAPI:
@@ -11,6 +13,9 @@ def create_app() -> FastAPI:
 
 
 app = create_app()
+
+app.add_middleware(RequestLoggingMiddleware)
+app.add_middleware(RequestContextMiddleware)
 
 
 if __name__ == "__main__":
